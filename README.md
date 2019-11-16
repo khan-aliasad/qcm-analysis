@@ -1,5 +1,5 @@
 # qcm-analysis
-This repo contains python source for visualising Quranic Arabic Corpus (GPL below) in graph topologies using networkx package. This uses v0.4 of the Quran Corpus Morphology.
+This repo contains python source for visualising [Quranic Arabic Corpus](http://corpus.quran.com) (GPL below) in graph topologies using networkx package. This uses v0.4 of the Quran Corpus Morphology.
 
 ```#  Quranic Arabic Corpus (Version 0.4)
 #  Copyright (C) 2011 Kais Dukes
