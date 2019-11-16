@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+
+"""
+This script takes snippets from AbdulBaqi Muhammad (Sharaf) http://abdulbaqi.io/2018/12/04/makki-madani-word-count/ 
+and his work as reported at http://textminingthequran.com/
+"""
+
 import numpy as np
 import pandas as pd
 

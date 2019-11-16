@@ -1,17 +1,28 @@
+#!/usr/bin/env python
+
+
+__author__ = "Ali Khan"
+__license__ = "GPL"
+__version__ = "0.0.1"
+__maintainer__ = "Ali Khan"
+__email__ = "khan.aliasad@gmail.com"
+__status__ = "dev"
+
+
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set(style='white')
 
 from bidi import algorithm as bidialg
 import arabic_reshaper
+
 import networkx as nx
 
 import qur_func
 
 
-########
+#######################
+
 
 def load_data_from_csv(path = '/Users/alikhan/Downloads/qur/'):
 	quran = pd.read_csv(path + 'quran-morphology-final.csv', sep=",", header=0)#, index_col='Index')
@@ -136,12 +147,15 @@ def draw_subgraph(G, method='breadth', node_of_interest = '', node_freq=None, no
 				', Roots: ' + str(len(I.nodes())) +
 				', Cooccurrences: '+ str(len(I.edges())))
 	plt.show()
+	
 
 ###########################
+
+
 if __name__ == '__main__':
 
 	path = '/Users/alikhan/Downloads/qur/'
-	sur = None
+	sur = 110
 	sz=5
 	if sur is not None:
 		sz=40
