@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 """
-This script visualises root data in terms of the forms that occur with it in all mentions 
-in a specific sura or the whole Quran
+This script visualises root data in terms of frequence or occurrence, its relationships with
+other roots in a specific sura or the whole Quran in terms of cooccurrence or paired frequency
 """
 
 __author__ = "Ali Khan"
@@ -28,13 +28,23 @@ import qur_func
 #######################
 
 
-def load_data_from_csv(path = '/Users/alikhan/Downloads/qur/'):
+def load_corpus_dataframe_from_csv(path = '/Users/alikhan/Downloads/qur/'):
 	quran = pd.read_csv(path + 'quran-morphology-final.csv', sep=",", header=0)#, index_col='Index')
 	qtoc = pd.read_csv(path + 'toc.csv')
 	qtoc['Name Arabic'] = qtoc['Name Arabic'].apply(lambda x: bidialg.get_display(arabic_reshaper.reshape(x)))
 	quran = quran.fillna(0)
 	print(quran.head())
 	print(quran.info())
+
+	# try:
+	# 	test= quran[['Root','Lemma','FORM','FORM_ar']].loc[quran.Lemma.apply(lambda x: qur_func.contains_num(x)) == True]
+	# 	test.Lemma = test.Lemma.str.replace('\d+', '')
+	# 	test['Lemma_ar'] = test.apply(lambda x: qur_func.buck_to_arabic(x.Lemma), axis=1)
+
+	# 	print(test)
+	# except ValueError:
+	# 	print('')
+
 	return quran, qtoc
 
 
@@ -101,7 +111,7 @@ def draw_graph(G, node_freq, nodesize_multiplier=40, weight='count', title=''):
 	plt.show() # display
 
 
-def draw_subgraph(G, method='breadth', node_of_interest = '', node_freq=None, nodesize_multiplier=5):
+def draw_subgraph(G, method='breadth', node_of_interest = '', node_freq=None, nodesize_multiplier=5, title= ''):
 	if method is 'breadth':
 		I = nx.bfs_tree(G, node_of_interest, depth_limit=1)
 	elif method is 'depth':
@@ -132,28 +142,29 @@ def draw_subgraph(G, method='breadth', node_of_interest = '', node_freq=None, no
 		nodelabels[node] = bidialg.get_display(arabic_reshaper.reshape(node))
 	labels = nx.draw_networkx_labels(I, dfspos, nodelabels, alpha=0.5, font_size = 9)
 
-	plt.title(bidialg.get_display(arabic_reshaper.reshape(node_of_interest))+ 
-				' Freq: ' + str(node_freq[node_of_interest]) +
+	plt.title('Root: ' + bidialg.get_display(arabic_reshaper.reshape(node_of_interest))+ 
+				', Freq: ' + str(node_freq[node_of_interest]) +
 				', Roots: ' + str(len(I.nodes())) +
-				', Cooccurrences: '+ str(len(I.edges())))
+				', Cooccurrences: '+ str(len(I.edges())) + '\nIn [' +
+				title + ']')
 	plt.show()
-
+	
 
 ###########################
 
 
 if __name__ == '__main__':
 
-	path = '/Users/alikhan/Downloads/qur/'
-	sur = 110
+	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
+	sur = None
 	sz=5
 	if sur is not None:
 		sz=40
 	analysand = 'Root_ar'#'Lemma_ar'
-	node_of_interest = u'كون'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
+	node_of_interest = u'ذكر'#'كون'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
 	method = 'breadth'
 	
-	quran, qtoc = load_data_from_csv(path = path)
+	quran, qtoc = load_corpus_dataframe_from_csv(path = path)
 	if sur is not None:
 		quran = quran[quran.sura == sur].reset_index()
 
@@ -188,13 +199,13 @@ if __name__ == '__main__':
 				pass
 
 	if sur is not None:
-		title = str(*qtoc[qtoc['No.'] == sur].values.tolist())[1:-1] + ', ' + str(len(G.nodes())) +', '+ str(len(G.edges()))
+		title = str(*qtoc[qtoc['No.'] == sur].values.tolist())[1:-1] + '\nRoots: ' + str(len(G.nodes())) +', Cooccurrences: '+ str(len(G.edges()))
 	else:
 		title = 'The Holy Quran, Roots: ' + str(len(G.nodes())) +', Cooccurrences: '+ str(len(G.edges()))
 	
 	# draw_graph(G, node_freq=root_counts, nodesize_multiplier = sz, weight='count', title=title)
 
-	draw_subgraph(G, method=method, node_of_interest = node_of_interest, nodesize_multiplier = sz, node_freq=root_counts)
+	draw_subgraph(G, method=method, node_of_interest = node_of_interest, nodesize_multiplier = sz, node_freq=root_counts, title= title)
 	#############################################
 	# check how many times a given degree occurs:
 	degrees = [a + ' ' + str(G.degree[a]) for a in G.nodes]

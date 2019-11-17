@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 """
-This script takes snippets from AbdulBaqi Muhammad (Sharaf) http://abdulbaqi.io/2018/12/04/makki-madani-word-count/ 
+This script loads and transforms the pandas dataframe for QCM
+It takes snippets from AbdulBaqi Muhammad (Sharaf) http://abdulbaqi.io/2018/12/04/makki-madani-word-count/ 
 and his work as reported at http://textminingthequran.com/
 """
 
@@ -10,8 +11,9 @@ import pandas as pd
 
 import qur_func
 
-def load_data(path='/Users/alikhan/Downloads/qur/'):
-	qdforiginal = data = pd.read_csv(path + 'qur-corpus-morphology-0.4.txt', sep="\t", header=0)
+def load_corpus(path='', filename='quranic-corpus-morphology-0.4.txt'):
+	qdforiginal = data = pd.read_csv(path + filename, skiprows=55, sep="\t", header=0)
+	print(data.head())
 	tmp1 = qdforiginal.LOCATION.str.extract(r'(?P<sura>\d*):(?P<aya>\d*):(?P<word>\d*):(?P<w_seg>\d*)')
 	tmp2 = qdforiginal.FEATURES.str.extract(r'ROOT:(?P<Root>[^|]*)')
 	tmp3 = qdforiginal.FEATURES.str.extract(r'LEM:(?P<Lemma>[^|]*)')
@@ -39,7 +41,7 @@ def load_data(path='/Users/alikhan/Downloads/qur/'):
 	quran['Lemma_ar'] = quran.apply(lambda x: qur_func.buck_to_arabic(x.Lemma), axis=1)
 	quran['POW'] = quran['FEATURES'].apply(lambda x: x.split('|')[0])
 
-	quran.to_csv('/Users/alikhan/Downloads/qur/quran-morphology-final.csv', index=False)
+	quran.to_csv(path + 'quran-morphology-final.csv', index=False)
 
 	return quran 
 
@@ -48,7 +50,7 @@ if __name__ == '__main__':
 	print(qur_func.buck_to_arabic('EalaY'))
 	# print(qur_func.arabic_to_buc('اﻟﺤﻤﺪ ﻟﻠﻪ'))
 
-	quran = load_data(path='/Users/alikhan/Downloads/qur/')
+	quran = load_corpus(path='/Users/alikhan/Downloads/qur/qcm-analysis/', filename='quranic-corpus-morphology-0.4.txt')
 
 	k = set(quran[quran.Place == 'Meccan'].Root.unique().tolist())
 	d = set(quran[quran.Place == 'Medinan'].Root.unique().tolist())
