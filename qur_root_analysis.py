@@ -166,14 +166,14 @@ def draw_graph(G, node_freq, nodesize_multiplier=40, weight='count', title=''):
 	# shpsize = 30+10*np.log2([root_counts[x] for x in filter(lambda x: shapemap[x]==shp, G.nodes().keys())])
 	# shpsize = [node_freq[x]*nodesize_multiplier*30 for x in G.nodes().keys()]
 
-	# pos = nx.spring_layout(G, k=0.7, iterations=10, weight='count')
+	pos = nx.spring_layout(G, k=0.7, iterations=10, weight='count')
 	# pos = nx.random_layout(G) #, weight='AMOUNT')
 	# pos = nx.circular_layout(G) #, weight='AMOUNT')
 	# pos = nx.shell_layout(G) #, weight='AMOUNT')
 	# pos = nx.spectral_layout(G) #, weight='AMOUNT')
 	maxkey = max(node_freq, key=node_freq.get) 
 	# pos = nx.fruchterman_reingold_layout(G, pos= {str(maxkey): (0.1,0.1)}, fixed=[maxkey], k=0.7, iterations=10, weight=weight)
-	pos = nx.fruchterman_reingold_layout(G, k=0.5, iterations=10, weight=weight)
+	# pos = nx.fruchterman_reingold_layout(G, k=0.5, iterations=10, weight=weight)
 	
 	fig = plt.figure(figsize=(40.10, 20.80))	
 
@@ -271,8 +271,8 @@ def draw_subgraph(I, node_of_interest = '', node_freq=None, nodesize_multiplier=
 
 	# dfspos = nx.kamada_kawai_layout(I, dist=df.to_dict())
 
-	dfspos = nx.fruchterman_reingold_layout(I, k=1, iterations=10)
-
+	dfspos = nx.spring_layout(I, k=0.7, iterations=10, weight='count')
+	# print(dfspos)
 	# shpsize = [node_freq[x]*nodesize_multiplier for x in I.nodes().keys()]
 
 	fig = plt.figure(figsize=(15.10, 20.80))	
@@ -297,14 +297,14 @@ def draw_subgraph(I, node_of_interest = '', node_freq=None, nodesize_multiplier=
 												font_color='white', alpha=0.6 )
 
 	plt.title('Root: ' + bidialg.get_display(arabic_reshaper.reshape(node_of_interest))+ 
-				' [Freq: ' + str(node_freq[node_of_interest]) +
+				' [Freq: ' + str(I.nodes[node_of_interest]['freq']) +
 				', Roots: ' + str(len(I.nodes())) +
 				', Cooccurrences: '+ str(len(I.edges())) + ']\nIn ' +
 				title)
 	plt.savefig('./fig/'+qur_func.arabic_to_buc(node_of_interest) + '.png', dpi=300, facecolor='w', edgecolor='w',
     orientation='landscape', papertype=None, format='png', transparent=False, bbox_inches=None, pad_inches=0.1,
     frameon=None)
-	plt.show()
+	# plt.show()
 	# from networkx.drawing.nx_agraph import write_dot
 	# write_dot(I, 'test.dot')
 
@@ -368,11 +368,13 @@ if __name__ == '__main__':
 				 ', Unique cooccurrences: ' + str(lenuniq) + ']'
 	
 	# nx.write_graphml(G, path + 'test.graphml')
-	draw_graph(G, node_freq=root_counts, nodesize_multiplier=sz, weight='count', title=title)
+	# draw_graph(G, node_freq=root_counts, nodesize_multiplier=sz, weight='count', title=title)
 
-	# I = create_subgraph(G, method=method, node_of_interest=node_of_interest)
-	I = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=node_of_interest)
-	draw_subgraph(I, node_of_interest=node_of_interest, nodesize_multiplier = sz, node_freq=root_counts, title= title)
+	for noi in G.nodes().keys():
+		print(noi)
+		# I = create_subgraph(G, method=method, node_of_interest=node_of_interest)
+		I = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=noi)
+		draw_subgraph(I, node_of_interest=noi, nodesize_multiplier = sz, title= title)
 	
 
 	#############################################
