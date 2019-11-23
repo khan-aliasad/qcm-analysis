@@ -159,6 +159,14 @@ def create_graph(edges_df, node_freq, u='one', v='two'):
 	# # print(nx.radius(G.to_undirected()))
 	# import sys
 	# sys.exit()
+
+	# print("radius: %d" % nx.radius(G.to_undirected()))
+	# print("diameter: %d" % nx.diameter(G.to_undirected()))
+	# print("eccentricity: %s" % nx.eccentricity(G.to_undirected()))
+	# print("center: %s" % nx.center(G.to_undirected()))
+	# print("periphery: %s" % nx.periphery(G.to_undirected()))
+	print("density: %s" % nx.density(G))
+
 	return G
 
 
@@ -229,13 +237,20 @@ def create_subgraph_from_edges_dataframe(edges_df, node_of_interest='', u='one',
 	# print(G.nodes(data=True))
 	nx.set_node_attributes(I, dict([(n,d['freq']) for n,d in G.nodes(data=True)]), 'freq')
 	N, K = I.order(), I.size()
-	print('Subgraph order (# nodes)', N)
-	print('Subraph size (# edges)', K)
-	print('Avg deg ',float(K)/N)
-	print('Strongly connected: ',nx.number_strongly_connected_components(I))
-	print('Weakly connected: ', nx.number_weakly_connected_components(I))
-
-	return I
+	# print('Subgraph order (# nodes)', N)
+	# print('Subraph size (# edges)', K)
+	# print('Avg deg ',float(K)/N)
+	# print('Strongly connected: ',nx.number_strongly_connected_components(I))
+	# print('Weakly connected: ', nx.number_weakly_connected_components(I))
+	# print("radius: %d" % nx.radius(I.to_undirected()))
+	# print("diameter: %d" % nx.diameter(I.to_undirected()))
+	# print("eccentricity: %s" % nx.eccentricity(I.to_undirected()))
+	# print("center: %s" % nx.center(I.to_undirected()))
+	# print("periphery: %s" % nx.periphery(I.to_undirected()))
+	# print("density: %s" % nx.density(I))
+	feat = [node_of_interest, N, K, len(sg_edges_df), len(temp), float(K)/N, nx.number_strongly_connected_components(I), nx.number_weakly_connected_components(I)]
+	feat.extend([nx.radius(I.to_undirected()), nx.diameter(I.to_undirected()), nx.center(I.to_undirected()), nx.density(I)])
+	return I, feat
 
 
 def create_subgraph(G, method='breadth', node_of_interest = ''): 
@@ -319,7 +334,7 @@ def draw_subgraph(I, node_of_interest = '', node_freq=None, nodesize_multiplier=
 if __name__ == '__main__':
 
 	path = '/Users/ali.khan/Documents/qcm-analysis/'
-	sur =1
+	sur =None
 	sz=15
 	if sur is not None:
 		sz=40
@@ -367,15 +382,26 @@ if __name__ == '__main__':
 		title = 'The Holy Quran [Roots: ' + str(len(G.nodes())) +', Cooccurrences: '+ str(len(G.edges())) + \
 				 ', Unique cooccurrences: ' + str(lenuniq) + ']'
 	
+	####################
 	# nx.write_graphml(G, path + 'test.graphml')
 	# draw_graph(G, node_freq=root_counts, nodesize_multiplier=sz, weight='count', title=title)
-
+	####################
+	features = []
 	for noi in G.nodes().keys():
 		print(noi)
 		# I = create_subgraph(G, method=method, node_of_interest=node_of_interest)
-		I = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=noi)
-		draw_subgraph(I, node_of_interest=noi, nodesize_multiplier = sz, title= title)
-	
+		I, feat = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=noi)
+		# draw_subgraph(I, node_of_interest=noi, nodesize_multiplier = sz, title= title)
+		print(len(I.in_degree()))
+		print(len(I.out_degree()))
+		# features.append(feat)
+
+	# features = pd.DataFrame(features, columns=['root', 'graph_order', 'graph_size', 'edges', 'unique_edges', 'avg_degree', 'strongly_connected', 'weakly_connected', 'radius', 'diameter','center','density'])
+	# if (features.graph_size - features.edges).sum()==0:
+	# 	features = features.drop('edges',1)
+	# print(features.info())
+	# features.to_csv(path + 'data/root_subgraph_features.csv')
+
 
 	#############################################
 
