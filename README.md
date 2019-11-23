@@ -31,8 +31,8 @@ This repo contains python source for visualising [Quranic Arabic Corpus](http://
 
 ```Anaconda3``` is required so might be best to update your distro (if using ```anaconda2```) before installing the following packages (not included in Anaconda).
 
-1. ```python-bidi (bidialg)``` - RTL for arabib display. Install using 'easy_install python-bidi'
-2. ```arabic reshaper``` - RTL for arabic display. Install using 'pip install arabic-reshaper'
+1. ```python-bidi (bidialg)``` - RTL for arabib display. Install using ```easy_install python-bidi```
+2. ```arabic reshaper``` - RTL for arabic display. Install using ```pip install arabic-reshaper```
 
 I use ```Sublime 3``` with Conda integration to code, but any other IDE should be fine.
 
