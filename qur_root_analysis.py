@@ -38,8 +38,8 @@ import qur_func
 
 
 def load_corpus_dataframe_from_csv(path = '/Users/alikhan/Downloads/qur/'):
-	quran = pd.read_csv(path + 'quran-morphology-final.csv', sep=",", header=0)#, index_col='Index')
-	qtoc = pd.read_csv(path + 'toc.csv')
+	quran = pd.read_csv(path + 'data/quran-morphology-final.csv', sep=",", header=0)#, index_col='Index')
+	qtoc = pd.read_csv(path + 'data/toc.csv')
 	qtoc['Name Arabic'] = qtoc['Name Arabic'].apply(lambda x: bidialg.get_display(arabic_reshaper.reshape(x)))
 	quran = quran.fillna(0)
 	print(quran.head())
@@ -301,10 +301,10 @@ def draw_subgraph(I, node_of_interest = '', node_freq=None, nodesize_multiplier=
 				', Roots: ' + str(len(I.nodes())) +
 				', Cooccurrences: '+ str(len(I.edges())) + ']\nIn ' +
 				title)
-	plt.savefig('./fig/'+qur_func.arabic_to_buc(node_of_interest) + '.png', dpi=300, facecolor='w', edgecolor='w',
-    orientation='landscape', papertype=None, format='png', transparent=False, bbox_inches=None, pad_inches=0.1,
-    frameon=None)
-	# plt.show()
+	# plt.savefig('./fig/'+qur_func.arabic_to_buc(node_of_interest) + '.png', dpi=300, facecolor='w', edgecolor='w',
+ #    orientation='landscape', papertype=None, format='png', transparent=False, bbox_inches=None, pad_inches=0.1,
+ #    frameon=None)
+	plt.show()
 	# from networkx.drawing.nx_agraph import write_dot
 	# write_dot(I, 'test.dot')
 
@@ -318,8 +318,8 @@ def draw_subgraph(I, node_of_interest = '', node_freq=None, nodesize_multiplier=
 
 if __name__ == '__main__':
 
-	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
-	sur =None
+	path = '/Users/ali.khan/Documents/qcm-analysis/'
+	sur =1
 	sz=15
 	if sur is not None:
 		sz=40
