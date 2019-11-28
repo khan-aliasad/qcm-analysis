@@ -332,15 +332,22 @@ def draw_subgraph(I, node_of_interest = '', node_freq=None, nodesize_multiplier=
 
 
 if __name__ == '__main__':
-
-	path = '/Users/ali.khan/Documents/qcm-analysis/'
+	#########################
+	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
 	sur =None
 	sz=15
 	if sur is not None:
 		sz=40
 	analysand = 'Root_ar'#'Lemma_ar'
-	node_of_interest = u'دين'#'فقه'#'كون'#'دين'#'فقه'#'شرع'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
+	node_of_interest = u'كون'#'دين'#'فقه'#'دين'#'فقه'#'شرع'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
 	method = 'breadth'
+
+	save_graphml = False
+	draw_full_graph = False
+	save_subgraphml = True 
+	draw_subgraph = False 
+	loop_to_subgraphs = False
+	#########################
 	
 	quran, qtoc = load_corpus_dataframe_from_csv(path = path)
 	if sur is not None:
@@ -382,25 +389,36 @@ if __name__ == '__main__':
 		title = 'The Holy Quran [Roots: ' + str(len(G.nodes())) +', Cooccurrences: '+ str(len(G.edges())) + \
 				 ', Unique cooccurrences: ' + str(lenuniq) + ']'
 	
-	####################
-	# nx.write_graphml(G, path + 'test.graphml')
-	# draw_graph(G, node_freq=root_counts, nodesize_multiplier=sz, weight='count', title=title)
-	####################
-	features = []
-	for noi in G.nodes().keys():
-		print(noi)
-		# I = create_subgraph(G, method=method, node_of_interest=node_of_interest)
-		I, feat = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=noi)
-		# draw_subgraph(I, node_of_interest=noi, nodesize_multiplier = sz, title= title)
-		print(len(I.in_degree()))
-		print(len(I.out_degree()))
-		# features.append(feat)
+	if save_graphml:
+		nx.write_graphml(G, path + 'graphml/test.graphml')
 
-	# features = pd.DataFrame(features, columns=['root', 'graph_order', 'graph_size', 'edges', 'unique_edges', 'avg_degree', 'strongly_connected', 'weakly_connected', 'radius', 'diameter','center','density'])
-	# if (features.graph_size - features.edges).sum()==0:
-	# 	features = features.drop('edges',1)
-	# print(features.info())
-	# features.to_csv(path + 'data/root_subgraph_features.csv')
+	if draw_full_graph:
+		draw_graph(G, node_freq=root_counts, nodesize_multiplier=sz, weight='count', title=title)
+
+	# I = create_subgraph(G, method=method, node_of_interest=node_of_interest)
+	I, f = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=node_of_interest)
+	
+	if save_subgraphml:
+		nx.write_graphml(I, path + 'graphml/' + node_of_interest + '.graphml')
+		# nx.write_graphml(I, path + 'graphml/' + qur_func.arabic_to_buc(node_of_interest) + '.graphml')
+
+	if draw_subgraph:
+		draw_subgraph(I, node_of_interest=noi, nodesize_multiplier = sz, title= title)
+
+	if loop_to_subgraphs:
+		features = []
+		for noi in G.nodes().keys():
+			print(noi)
+			I, feat = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=noi)
+			print(len(I.in_degree()))
+			print(len(I.out_degree()))
+			features.append(feat)
+
+		features = pd.DataFrame(features, columns=['root', 'graph_order', 'graph_size', 'edges', 'unique_edges', 'avg_degree', 'strongly_connected', 'weakly_connected', 'radius', 'diameter','center','density'])
+		if (features.graph_size - features.edges).sum()==0:
+			features = features.drop('edges',1)
+		print(features.info())
+		features.to_csv(path + 'data/root_subgraph_features.csv')
 
 
 	#############################################
