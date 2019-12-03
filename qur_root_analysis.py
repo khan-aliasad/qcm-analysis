@@ -5,7 +5,7 @@
 This script visualises root data in terms of frequence or occurrence, its relationships with
 other roots in a specific sura or the whole Quran in terms of cooccurrence or paired frequency
 
-TODO
+DONE
 1. Add sura and aya numbers with pair freq or count (aka cooccurrence) as attributes of edges
 2. Add frequency or count of single root to node attribute
 3. Output that graph with edge and node attrib to graphml for cytoscape exploration
@@ -250,6 +250,8 @@ def create_subgraph_from_edges_dataframe(edges_df, node_of_interest='', u='one',
 	# print("density: %s" % nx.density(I))
 	feat = [node_of_interest, N, K, len(sg_edges_df), len(temp), float(K)/N, nx.number_strongly_connected_components(I), nx.number_weakly_connected_components(I)]
 	feat.extend([nx.radius(I.to_undirected()), nx.diameter(I.to_undirected()), nx.center(I.to_undirected()), nx.density(I)])
+	feat.extend([I.in_degree(node_of_interest), I.out_degree(node_of_interest)])
+	feat.extend([sg_edges_df['count'].max(), I.nodes[node_of_interest]['freq']])
 	return I, feat
 
 
@@ -323,35 +325,48 @@ def draw_subgraph(I, node_of_interest = '', node_freq=None, nodesize_multiplier=
 	# from networkx.drawing.nx_agraph import write_dot
 	# write_dot(I, 'test.dot')
 
-###########################
-
 
 ###########################
-
-
+###########################
 
 
 if __name__ == '__main__':
 	#########################
-	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
-	sur =None
-	sz=15
+	path = '/Users/ali.khan/Documents/qcm-analysis/'
+	
+	chronological = True
+
+	sur = [1]#None
+
 	if sur is not None:
-		sz=40
+		sz = 80
+	
+	sz = 15
+	
 	analysand = 'Root_ar'#'Lemma_ar'
 	node_of_interest = u'كون'#'دين'#'فقه'#'دين'#'فقه'#'شرع'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
 	method = 'breadth'
 
+	draw_full_graph = True
 	save_graphml = False
-	draw_full_graph = False
-	save_subgraphml = True 
+
+	save_subgraphml = False 
 	draw_subgraph = False 
+	
 	loop_to_subgraphs = False
 	#########################
 	
 	quran, qtoc = load_corpus_dataframe_from_csv(path = path)
+	quran = quran.merge(qtoc.drop('Place',1), left_on='sura', right_on='No.')
+	print(quran.info())
+	# print(qtoc)
+	# assert((quran.Place_x == quran.Place_y).all())
+	if chronological:
+		quran['sura'] = quran['Chronology'].copy()
+		assert((quran.sura == quran.Chronology).all())
+
 	if sur is not None:
-		quran = quran[quran.sura == sur].reset_index()
+		quran = quran[quran.sura.isin(sur)].reset_index()
 
 	quran['position'] = quran['sura'].astype(str) + ':' + quran['aya'].astype(str)
 
@@ -383,8 +398,14 @@ if __name__ == '__main__':
 				pass
 
 	if sur is not None:
-		title = str(*qtoc[qtoc['No.'] == sur].values.tolist())[1:-1] + '\nRoots: ' + str(len(G.nodes())) + \
-				', Cooccurrences: '+ str(len(G.edges())) + ', Unique cooccurrences: ' + str(lenuniq)
+		if chronological:
+			num = 'Chronology'
+		else:
+			num = 'No.'
+		# title = str(*qtoc[qtoc[num] == sur].values.tolist())[1:-1] + '\nRoots: ' + str(len(G.nodes())) + \
+		# 		', Cooccurrences: '+ str(len(G.edges())) + ', Unique cooccurrences: ' + str(lenuniq)
+		title = ''
+
 	else:
 		title = 'The Holy Quran [Roots: ' + str(len(G.nodes())) +', Cooccurrences: '+ str(len(G.edges())) + \
 				 ', Unique cooccurrences: ' + str(lenuniq) + ']'
@@ -395,12 +416,16 @@ if __name__ == '__main__':
 	if draw_full_graph:
 		draw_graph(G, node_freq=root_counts, nodesize_multiplier=sz, weight='count', title=title)
 
+	##################################################################
+	############ Subgraph for node of interest (root) ################
+	##################################################################
+
 	# I = create_subgraph(G, method=method, node_of_interest=node_of_interest)
 	I, f = create_subgraph_from_edges_dataframe(edges_df, node_of_interest=node_of_interest)
 	
 	if save_subgraphml:
-		nx.write_graphml(I, path + 'graphml/' + node_of_interest + '.graphml')
-		# nx.write_graphml(I, path + 'graphml/' + qur_func.arabic_to_buc(node_of_interest) + '.graphml')
+		# nx.write_graphml(I, path + 'graphml/' + node_of_interest + '.graphml')
+		nx.write_graphml(I, path + 'graphml/' + qur_func.arabic_to_buc(node_of_interest) + '.graphml')
 
 	if draw_subgraph:
 		draw_subgraph(I, node_of_interest=noi, nodesize_multiplier = sz, title= title)
@@ -414,7 +439,10 @@ if __name__ == '__main__':
 			print(len(I.out_degree()))
 			features.append(feat)
 
-		features = pd.DataFrame(features, columns=['root', 'graph_order', 'graph_size', 'edges', 'unique_edges', 'avg_degree', 'strongly_connected', 'weakly_connected', 'radius', 'diameter','center','density'])
+		features = pd.DataFrame(features, columns=['root', 'graph_order', 'graph_size', 
+				'edges', 'unique_edges', 'avg_degree', 'strongly_connected', 
+				'weakly_connected', 'radius', 'diameter','center','density', 
+				'in_degree', 'out_degree','max_cooccurrence','freq'])
 		if (features.graph_size - features.edges).sum()==0:
 			features = features.drop('edges',1)
 		print(features.info())

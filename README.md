@@ -46,5 +46,22 @@ Run this script to create graph topologies for any selected Sura, or the entire 
 
 This script visualises root data in terms of frequence or occurrence, its relationships with other roots in a specific sura or the whole Quran in terms of cooccurrence or paired frequency.
 
-~~TODO~~
+TODO
 ~~1. Graph properties like ...~~
++ Pre/post migration roots dominance + Overlap across the two periods
++ Nltk 
++ Prose and poetry features difference eg words in verse, verse in sura, average verse length, meter verse, eg 2 cow vs 81 overthrowing then see chronology of poetry to prose progression in light of changing meter, changing roots,  other features 
++ Asbab e nuzul 
++ Verse cosine similarity in all English translations 
++ Check sequence and dist of verse lengths in chronological sequence
++ Check sequence and dist of sura lengths in chronological sequence 
+
++ For root kwn, find all forms, in particular kuntum and kunu relationship
+
++ Frequency of roots per verse / per sura, see timeline of appearance of trad and chron seq
++ Cluster roots using unsuper or existing schema nodolke
++ Cosine verse/sura similarity themes
++ Sent analysis per sura
++ Descriptive stats features of verse/sura to explore nmerlgy
+
++ Izuts, God and Man in the Quran; Ethico religious concepts in Quran
