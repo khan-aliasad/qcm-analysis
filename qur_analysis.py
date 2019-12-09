@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
 	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
 
-	if True:
+	if False:
 		import seaborn as sns 
 		sns.set(style='white')
 		data = pd.read_csv(path + 'data/' + 'root_subgraph_features.csv')
@@ -129,3 +129,8 @@ if __name__ == '__main__':
 	print(d.head())
 	print(len(d[d.Place == 'Meccan']), np.sort(d[d.Place == 'Meccan'].sura.unique()))
 	print(len(d[d.Place == 'Medinan']), np.sort(d[d.Place == 'Medinan'].sura.unique()))
+
+	d['counter'] = 1
+	print(d.groupby(['sura','aya','Place']).agg(sum).reset_index())
+	print(d.groupby(['sura','aya','Place']).agg(sum).reset_index().counter.max())
+	print(d.groupby(['sura','aya','Place']).agg(sum).reset_index().groupby('Place').agg(sum).reset_index())

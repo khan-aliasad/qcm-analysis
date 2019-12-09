@@ -52,14 +52,17 @@ if __name__ == '__main__':
 	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
 
 	quran, qtoc = load_data_from_csv(path = path + 'data/')
-	# quran = quran.merge(qtoc.drop('Place',1), left_on='sura', right_on='No.')
+	quran = quran.merge(qtoc.drop('Place',1), left_on='sura', right_on='No.')
 	quran['number of roots'] = quran.Root_ar.astype(bool).astype(int)
-	quran = quran.groupby(['sura','Root_ar']).agg(sum).reset_index()
-	quran = quran[quran.Root_ar != 0]
-	qpiv = quran.pivot(index='sura', columns='Root_ar', values='number of roots')
-	if False:
+	
+	qrn = quran.groupby(['sura','Root_ar']).agg(sum).reset_index()
+	qrn = qrn[qrn.Root_ar != 0]
+	qpiv = qrn.pivot(index='sura', columns='Root_ar', values='number of roots')
+
+	if True:
 		sns.heatmap(qpiv, xticklabels=30, yticklabels=4, cmap='Blues',center=50)#, linewidth=0.5)# cmap='YlGnBu')
-		plt.show()
+		plt.show(); plt.close()
+
 	root_counts = qpiv.sum()
 	root_sura_counts = qpiv.fillna(0).astype(bool).sum()
 	root_sura_freq = root_counts/root_sura_counts
@@ -71,9 +74,13 @@ if __name__ == '__main__':
 		ax.text(xs, ys, bidialg.get_display(arabic_reshaper.reshape(n)), alpha=0.6, size=10) ##bidialg.get_display(arabic_reshaper.reshape(n))
 	plt.xlabel('Total number of Suras in which root appears')
 	plt.ylabel('Total root appearances divided by Total number of Suras in which root appears')
-	plt.show()
+	plt.show(); plt.close()
 
-	if False:
+	if True:
+		ax = sns.kdeplot(datf['root_sura_counts'], datf['root_sura_freq'], shade=True)
+		plt.show(); plt.close()
+
+	if True:
 		# print(quran.sura.max())
 		sequence = 'chronological' #'chronological'
 		if sequence is 'traditional':
