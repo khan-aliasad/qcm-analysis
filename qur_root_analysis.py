@@ -15,7 +15,7 @@ DONE
 
 __author__ = "Ali Khan"
 __license__ = "GPL"
-__version__ = "0.0.1"
+__version__ = "0.0.8"
 __maintainer__ = "Ali Khan"
 __email__ = "khan.aliasad@gmail.com"
 __status__ = "dev"

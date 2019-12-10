@@ -14,7 +14,7 @@ Save graph props in a feature matrix
 
 __author__ = "Ali Khan"
 __license__ = "GPL"
-__version__ = "0.0.1"
+__version__ = "0.0.3"
 __maintainer__ = "Ali Khan"
 __email__ = "khan.aliasad@gmail.com"
 __status__ = "dev"
@@ -42,7 +42,7 @@ if __name__ == '__main__':
 	noi = u'اله'
 	sz = 40
 	
-	draw_full_graph = True
+	draw_full_graph = False
 	save_graphml = False
 
 	#########################
@@ -51,8 +51,8 @@ if __name__ == '__main__':
 	quran['position'] = quran['sura'].astype(str) + ':' + quran['aya'].astype(str)
 	print(qtoc.info())
 	features = []
-	feat_header_ext= list(feat_header).extend(['sura'])
-	print(feat_header_ext)
+	feat_header.extend(['sura', 'sura_name'])
+	print(feat_header)
 
 	for sur in qtoc['No.'].values:
 		print(sur)
@@ -65,24 +65,29 @@ if __name__ == '__main__':
 				', Cooccurrences: '+ str(len(G.edges())) + ', Unique cooccurrences: ' + str(lenuniq)
 
 		sura_name = qtoc[qtoc['No.'] == sur]['Name'].values[0]
-		f1 = list(f).extend([sura_name])
-		print(f1)
-		features.append(f1)
+		print(sura_name)
+		f.extend([sur, sura_name])
+		# print(f)
+		features.append(f)
 
 		if save_graphml:
 			nx.write_graphml(G, path + 'graphml/'+ sura_name + '.graphml')
 
 		if draw_full_graph:
-			if f1[0] != '':
-				f1[0] = bidialg.get_display(arabic_reshaper.reshape(f1[0]))
+			if f[0] != '':
+				f[0] = bidialg.get_display(arabic_reshaper.reshape(f[0]))
 			from itertools import zip_longest
-			feat = '\n'.join(':  '.join(x) for x in zip_longest(feat_header_ext, [str(i) for i in f1], fillvalue=''))
+			feat = '\n'.join(':  '.join(x) for x in zip_longest(feat_header, [str(i) for i in f], fillvalue=''))
 			draw_graph(G, node_freq=root_counts, feat=feat, nodesize_multiplier=sz, 
 						weight='count', title=title, filename=sura_name)
 
-	features = pd.DataFrame(features, columns=feat_header_ext)
+	features = pd.DataFrame(features, columns=feat_header)
 	print(features.info())
 	features.to_csv(path + 'data/sura_graph_features.csv')
+
+	feat_header.remove('sura')
+	feat_header.remove('sura_name')
+	print(feat_header)
 
 
 	# ##################################################################

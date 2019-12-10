@@ -1,9 +1,21 @@
 #!/usr/bin/env python
 
 """
-This script takes snippets from AbdulBaqi Muhammad (Sharaf) http://abdulbaqi.io/2018/12/04/makki-madani-word-count/ 
+This script takes 5 functions from AbdulBaqi Muhammad (Sharaf) 
+http://abdulbaqi.io/2018/12/04/makki-madani-word-count/ 
 and his work as reported at http://textminingthequran.com/
+
+The remainder of the script has utility functions written for other 
+analyses scripts as included in the repo
 """
+
+__author__ = "Ali Khan"
+__license__ = "GPL"
+__version__ = "0.0.8"
+__maintainer__ = "Ali Khan"
+__email__ = "khan.aliasad@gmail.com"
+__status__ = "dev"
+
 
 import pandas as pd
 import numpy as np
@@ -21,6 +33,12 @@ feat_header = ['root', 'graph_order', 'graph_size',
                 'weakly_connected', 'radius', 'diameter','center','density', 
                 'root_degree', 'root_in_degree', 'root_out_degree','max_cooccurrence','root_freq']
 
+
+###############################################################
+# This code block includes src from AbdulBaqi Muhammad (Sharaf) 
+# http://abdulbaqi.io/2018/12/04/makki-madani-word-count/ 
+# and his work as reported at http://textminingthequran.com/
+###############################################################
 
 abjad = {u"\u0627":'A',
 u"\u0628":'b', u"\u062A":'t', u"\u062B":'v', u"\u062C":'j',
@@ -123,7 +141,9 @@ def unique_sura_words(quran, s_list, kind='W'):
         result = list(set(first)-set(second))
     return [buck_to_arabic(x) for x in result]
 
-#############################
+###############################################################
+####################### END Code Block ########################
+###############################################################
 
 
 def load_corpus_dataframe_from_csv(path = '/Users/alikhan/Downloads/qur/'):
