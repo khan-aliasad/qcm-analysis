@@ -14,7 +14,7 @@ computed as (total appearances / total suras appeared in)
 
 __author__ = "Ali Khan"
 __license__ = "GPL"
-__version__ = "0.0.1"
+__version__ = "0.0.3"
 __maintainer__ = "Ali Khan"
 __email__ = "khan.aliasad@gmail.com"
 __status__ = "dev"
@@ -55,12 +55,15 @@ if __name__ == '__main__':
 	quran = quran.merge(qtoc.drop('Place',1), left_on='sura', right_on='No.')
 	quran['number of roots'] = quran.Root_ar.astype(bool).astype(int)
 	
+	# qrn = quran.groupby(['Chronology','Root_ar']).agg(sum).reset_index()
 	qrn = quran.groupby(['sura','Root_ar']).agg(sum).reset_index()
 	qrn = qrn[qrn.Root_ar != 0]
+	# qpiv = qrn.pivot(index='Chronology', columns='Root_ar', values='number of roots')
 	qpiv = qrn.pivot(index='sura', columns='Root_ar', values='number of roots')
+	qpiv.to_csv(path + 'data/heatmap_features.csv')
 
 	if True:
-		sns.heatmap(qpiv, xticklabels=30, yticklabels=4, cmap='Blues',center=50)#, linewidth=0.5)# cmap='YlGnBu')
+		sns.heatmap(qpiv.sort_index(), xticklabels=30, yticklabels=4, cmap='Blues',center=50)#, linewidth=0.5)# cmap='YlGnBu')
 		plt.show(); plt.close()
 
 	root_counts = qpiv.sum()

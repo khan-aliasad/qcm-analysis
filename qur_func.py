@@ -11,7 +11,7 @@ analyses scripts as included in the repo
 
 __author__ = "Ali Khan"
 __license__ = "GPL"
-__version__ = "0.0.8"
+__version__ = "0.0.9"
 __maintainer__ = "Ali Khan"
 __email__ = "khan.aliasad@gmail.com"
 __status__ = "dev"
@@ -19,8 +19,10 @@ __status__ = "dev"
 
 import pandas as pd
 import numpy as np
+
 from bidi import algorithm as bidialg
 import arabic_reshaper
+
 import networkx as nx
 
 import matplotlib.pyplot as plt
@@ -144,6 +146,13 @@ def unique_sura_words(quran, s_list, kind='W'):
 ###############################################################
 ####################### END Code Block ########################
 ###############################################################
+
+
+def load_qtoc(path = '/Users/alikhan/Downloads/qur/'):
+    qtoc = pd.read_csv(path + 'toc.csv')
+    qtoc['Name Arabic'] = qtoc['Name Arabic'] \
+                            .apply(lambda x: bidialg.get_display(arabic_reshaper.reshape(x)))
+    return qtoc
 
 
 def load_corpus_dataframe_from_csv(path = '/Users/alikhan/Downloads/qur/'):

@@ -50,8 +50,8 @@ TODO
 ~~1. Graph properties like ...~~
 + Pre/post migration roots dominance + Overlap across the two periods
 + Nltk 
-+ Prose and poetry features difference eg words in verse, verse in sura, average verse length, meter verse, eg 2 cow vs 81 overthrowing then see chronology of poetry to prose progression in light of changing meter, changing roots,  other features 
-+ Asbab e nuzul 
++ Free verse features and otherwise difference eg words in verse, verse in sura, average verse length, meter verse, eg 2 cow vs 81 overthrowing then see chronology of free verse to prose progression in light of changing meter, changing roots,  other features 
++ Context of revelation
 + Verse cosine similarity in all English translations 
 + Check sequence and dist of verse lengths in chronological sequence
 + Check sequence and dist of sura lengths in chronological sequence 
@@ -65,3 +65,8 @@ TODO
 + Descriptive stats features of verse/sura to explore nmerlgy
 
 + Izuts, God and Man in the Quran; Ethico religious concepts in Quran
+
++ Cluster 1 with 87 suras - further cluster by removing sparse roots
++ Use GMM EM to cluster
++ Heatmap take sums of rows and columns and sort by sums 
++ Verse clustering
