@@ -1,0 +1,1243 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d3" for="edge" attr.name="count" attr.type="long"/>
+<key id="d2" for="edge" attr.name="3" attr.type="string"/>
+<key id="d1" for="edge" attr.name="pos" attr.type="string"/>
+<key id="d0" for="node" attr.name="freq" attr.type="long"/>
+<graph edgedefault="directed"><node id="لَا">
+  <data key="d0">1738</data>
+</node>
+<node id="عِلْم">
+  <data key="d0">105</data>
+</node>
+<node id="إِلَّا">
+  <data key="d0">663</data>
+</node>
+<node id="مِن">
+  <data key="d0">3226</data>
+</node>
+<node id="مَا">
+  <data key="d0">2565</data>
+</node>
+<node id="إِنّ">
+  <data key="d0">1682</data>
+</node>
+<node id="فِى">
+  <data key="d0">1701</data>
+</node>
+<node id="جِسْم">
+  <data key="d0">2</data>
+</node>
+<node id="قَالَ">
+  <data key="d0">1618</data>
+</node>
+<node id="أُولِى">
+  <data key="d0">45</data>
+</node>
+<node id="قَآئِم">
+  <data key="d0">17</data>
+</node>
+<node id="جَآءَ">
+  <data key="d0">278</data>
+</node>
+<node id="بَغْي">
+  <data key="d0">11</data>
+</node>
+<node id="لَّيْسَ">
+  <data key="d0">89</data>
+</node>
+<node id="ٱللَّه">
+  <data key="d0">2699</data>
+</node>
+<node id="أَنزَلَ">
+  <data key="d0">183</data>
+</node>
+<node id="مَلَك">
+  <data key="d0">88</data>
+</node>
+<node id="شَىْء">
+  <data key="d0">283</data>
+</node>
+<node id="غَيْر">
+  <data key="d0">147</data>
+</node>
+<node id="سُبْحَٰن">
+  <data key="d0">41</data>
+</node>
+<node id="ذَٰلِك">
+  <data key="d0">520</data>
+</node>
+<node id="حَرَّمَ">
+  <data key="d0">39</data>
+</node>
+<node id="نَبَّأَ">
+  <data key="d0">46</data>
+</node>
+<node id="إِن">
+  <data key="d0">697</data>
+</node>
+<node id="أَخْرَجَ">
+  <data key="d0">99</data>
+</node>
+<node id="عَلَىٰ">
+  <data key="d0">1445</data>
+</node>
+<node id="هُدًى">
+  <data key="d0">85</data>
+</node>
+<node id="عِند">
+  <data key="d0">197</data>
+</node>
+<node id="أَحَاطَ">
+  <data key="d0">17</data>
+</node>
+<node id="لَم">
+  <data key="d0">353</data>
+</node>
+<node id="حُكْم">
+  <data key="d0">30</data>
+</node>
+<node id="ذُو">
+  <data key="d0">93</data>
+</node>
+<node id="عَلِيم">
+  <data key="d0">163</data>
+</node>
+<node id="كِتَٰب">
+  <data key="d0">260</data>
+</node>
+<node id="أَلَآ">
+  <data key="d0">39</data>
+</node>
+<node id="آتَى">
+  <data key="d0">271</data>
+</node>
+<node id="بَعْد">
+  <data key="d0">199</data>
+</node>
+<node id="لَّدُن">
+  <data key="d0">18</data>
+</node>
+<node id="زَادَ">
+  <data key="d0">49</data>
+</node>
+<node id="نَجَّىٰ">
+  <data key="d0">37</data>
+</node>
+<node id="سَخَّرَ">
+  <data key="d0">22</data>
+</node>
+<node id="ٱتَّبَعَ">
+  <data key="d0">136</data>
+</node>
+<node id="أَنّ">
+  <data key="d0">362</data>
+</node>
+<node id="حَسِبَ">
+  <data key="d0">44</data>
+</node>
+<node id="سُلَيْمَٰن">
+  <data key="d0">17</data>
+</node>
+<node id="ٱدَّٰرَكَ">
+  <data key="d0">3</data>
+</node>
+<node id="أَم">
+  <data key="d0">137</data>
+</node>
+<node id="وَيْل">
+  <data key="d0">40</data>
+</node>
+<node id="مَن">
+  <data key="d0">871</data>
+</node>
+<node id="إِيمَٰن">
+  <data key="d0">45</data>
+</node>
+<node id="ٱتَّخَذَ">
+  <data key="d0">124</data>
+</node>
+<node id="سَاعَة">
+  <data key="d0">48</data>
+</node>
+<node id="ٱلَّذِى">
+  <data key="d0">1464</data>
+</node>
+<node id="مَلَأ">
+  <data key="d0">30</data>
+</node>
+<node id="بَل">
+  <data key="d0">127</data>
+</node>
+<node id="رَحْمَة">
+  <data key="d0">114</data>
+</node>
+<node id="غَفَرَ">
+  <data key="d0">65</data>
+</node>
+<node id="دَعَا">
+  <data key="d0">170</data>
+</node>
+<node id="حَاقَ">
+  <data key="d0">10</data>
+</node>
+<node id="رَدَّ">
+  <data key="d0">36</data>
+</node>
+<node id="يَوْم">
+  <data key="d0">405</data>
+</node>
+<node id="خَتَمَ">
+  <data key="d0">5</data>
+</node>
+<node id="مَاذَا">
+  <data key="d0">26</data>
+</node>
+<node id="أُدْخِلَ">
+  <data key="d0">42</data>
+</node>
+<node id="غَيْب">
+  <data key="d0">49</data>
+</node>
+<node id="دَرَجَة">
+  <data key="d0">18</data>
+</node>
+<node id="أَيُّهَا">
+  <data key="d0">153</data>
+</node>
+<node id="عَلِمَ">
+  <data key="d0">382</data>
+</node>
+<node id="يَقِين">
+  <data key="d0">8</data>
+</node>
+<edge source="لَا" target="عِلْم" id="0">
+  <data key="d1">2:32</data>
+  <data key="d2">2:32</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="لَا" target="عِلْم" id="1">
+  <data key="d1">5:109</data>
+  <data key="d2">5:109</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="عِلْم" target="إِلَّا" id="0">
+  <data key="d1">2:32</data>
+  <data key="d2">2:32</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِلَّا" id="1">
+  <data key="d1">2:255</data>
+  <data key="d2">2:255</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِلَّا" id="2">
+  <data key="d1">4:157</data>
+  <data key="d2">4:157</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِلَّا" id="3">
+  <data key="d1">11:47</data>
+  <data key="d2">11:47</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِلَّا" id="4">
+  <data key="d1">17:85</data>
+  <data key="d2">17:85</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="0">
+  <data key="d1">2:120</data>
+  <data key="d2">2:120</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="1">
+  <data key="d1">3:66</data>
+  <data key="d2">3:66</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="2">
+  <data key="d1">7:7</data>
+  <data key="d2">7:7</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="3">
+  <data key="d1">12:68</data>
+  <data key="d2">12:68</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="4">
+  <data key="d1">13:37</data>
+  <data key="d2">13:37</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="5">
+  <data key="d1">19:43</data>
+  <data key="d2">19:43</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="6">
+  <data key="d1">22:71</data>
+  <data key="d2">22:71</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="7">
+  <data key="d1">26:112</data>
+  <data key="d2">26:112</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="8">
+  <data key="d1">29:49</data>
+  <data key="d2">29:49</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="مَا" id="9">
+  <data key="d1">35:11</data>
+  <data key="d2">35:11</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="0">
+  <data key="d1">2:145</data>
+  <data key="d2">2:145</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="1">
+  <data key="d1">5:109</data>
+  <data key="d2">5:109</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="2">
+  <data key="d1">6:119</data>
+  <data key="d2">6:119</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="3">
+  <data key="d1">6:144</data>
+  <data key="d2">6:144</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="4">
+  <data key="d1">10:93</data>
+  <data key="d2">10:93</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="5">
+  <data key="d1">11:46</data>
+  <data key="d2">11:46</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="6">
+  <data key="d1">16:27</data>
+  <data key="d2">16:27</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="7">
+  <data key="d1">17:36</data>
+  <data key="d2">17:36</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="إِنّ" id="8">
+  <data key="d1">53:30</data>
+  <data key="d2">53:30</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="عِلْم" target="جِسْم" id="0">
+  <data key="d1">2:247</data>
+  <data key="d2">2:247</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="قَالَ" id="0">
+  <data key="d1">3:7</data>
+  <data key="d2">3:7</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="قَالَ" id="1">
+  <data key="d1">3:61</data>
+  <data key="d2">3:61</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="قَالَ" id="2">
+  <data key="d1">27:15</data>
+  <data key="d2">27:15</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="قَآئِم" id="0">
+  <data key="d1">3:18</data>
+  <data key="d2">3:18</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="بَغْي" id="0">
+  <data key="d1">3:19</data>
+  <data key="d2">3:19</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="بَغْي" id="1">
+  <data key="d1">42:14</data>
+  <data key="d2">42:14</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="بَغْي" id="2">
+  <data key="d1">45:17</data>
+  <data key="d2">45:17</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="ٱللَّه" id="0">
+  <data key="d1">3:66</data>
+  <data key="d2">3:66</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="عِلْم" target="ٱللَّه" id="1">
+  <data key="d1">11:14</data>
+  <data key="d2">11:14</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="عِلْم" target="مِن" id="0">
+  <data key="d1">4:162</data>
+  <data key="d2">4:162</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="مِن" id="1">
+  <data key="d1">17:107</data>
+  <data key="d2">17:107</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="مِن" id="2">
+  <data key="d1">27:40</data>
+  <data key="d2">27:40</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="مِن" id="3">
+  <data key="d1">27:42</data>
+  <data key="d2">27:42</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="مَلَك" id="0">
+  <data key="d1">4:166</data>
+  <data key="d2">4:166</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="لَا" id="0">
+  <data key="d1">6:80</data>
+  <data key="d2">6:80</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عِلْم" target="لَا" id="1">
+  <data key="d1">18:5</data>
+  <data key="d2">18:5</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عِلْم" target="لَا" id="2">
+  <data key="d1">22:8</data>
+  <data key="d2">22:8</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عِلْم" target="لَا" id="3">
+  <data key="d1">29:8</data>
+  <data key="d2">29:8</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عِلْم" target="لَا" id="4">
+  <data key="d1">31:15</data>
+  <data key="d2">31:15</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عِلْم" target="لَا" id="5">
+  <data key="d1">31:20</data>
+  <data key="d2">31:20</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عِلْم" target="سُبْحَٰن" id="0">
+  <data key="d1">6:100</data>
+  <data key="d2">6:100</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="ذَٰلِك" id="0">
+  <data key="d1">6:108</data>
+  <data key="d2">6:108</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="ذَٰلِك" id="1">
+  <data key="d1">12:22</data>
+  <data key="d2">12:22</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="ذَٰلِك" id="2">
+  <data key="d1">28:14</data>
+  <data key="d2">28:14</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="عِلْم" target="حَرَّمَ" id="0">
+  <data key="d1">6:140</data>
+  <data key="d2">6:140</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="إِن" id="0">
+  <data key="d1">6:143</data>
+  <data key="d2">6:143</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِن" id="1">
+  <data key="d1">43:20</data>
+  <data key="d2">43:20</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِن" id="2">
+  <data key="d1">45:24</data>
+  <data key="d2">45:24</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِن" id="3">
+  <data key="d1">46:4</data>
+  <data key="d2">46:4</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="إِن" id="4">
+  <data key="d1">53:28</data>
+  <data key="d2">53:28</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِلْم" target="أَخْرَجَ" id="0">
+  <data key="d1">6:148</data>
+  <data key="d2">6:148</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="هُدًى" id="0">
+  <data key="d1">7:52</data>
+  <data key="d2">7:52</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="عَلَىٰ" id="0">
+  <data key="d1">7:89</data>
+  <data key="d2">7:89</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="عِلْم" target="عَلَىٰ" id="1">
+  <data key="d1">44:32</data>
+  <data key="d2">44:32</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="عِلْم" target="عِند" id="0">
+  <data key="d1">7:187</data>
+  <data key="d2">7:187</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="عِلْم" target="عِند" id="1">
+  <data key="d1">7:187</data>
+  <data key="d2">7:187</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="عِلْم" target="عِند" id="2">
+  <data key="d1">20:52</data>
+  <data key="d2">20:52</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="عِلْم" target="عِند" id="3">
+  <data key="d1">28:78</data>
+  <data key="d2">28:78</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="عِلْم" target="عِند" id="4">
+  <data key="d1">33:63</data>
+  <data key="d2">33:63</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="عِلْم" target="عِند" id="5">
+  <data key="d1">46:23</data>
+  <data key="d2">46:23</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="عِلْم" target="عِند" id="6">
+  <data key="d1">67:26</data>
+  <data key="d2">67:26</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="عِلْم" target="لَم" id="0">
+  <data key="d1">10:39</data>
+  <data key="d2">10:39</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="عَلِيم" id="0">
+  <data key="d1">12:76</data>
+  <data key="d2">12:76</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="كِتَٰب" id="0">
+  <data key="d1">13:43</data>
+  <data key="d2">13:43</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="أَلَآ" id="0">
+  <data key="d1">16:25</data>
+  <data key="d2">16:25</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="شَىْء" id="0">
+  <data key="d1">16:70</data>
+  <data key="d2">16:70</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="عِلْم" target="شَىْء" id="1">
+  <data key="d1">22:5</data>
+  <data key="d2">22:5</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="عِلْم" target="نَجَّىٰ" id="0">
+  <data key="d1">21:74</data>
+  <data key="d2">21:74</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="سَخَّرَ" id="0">
+  <data key="d1">21:79</data>
+  <data key="d2">21:79</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="ٱتَّبَعَ" id="0">
+  <data key="d1">22:3</data>
+  <data key="d2">22:3</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="أَنّ" id="0">
+  <data key="d1">22:54</data>
+  <data key="d2">22:54</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="حَسِبَ" id="0">
+  <data key="d1">24:15</data>
+  <data key="d2">24:15</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="فِى" id="0">
+  <data key="d1">27:66</data>
+  <data key="d2">27:66</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="أَم" id="0">
+  <data key="d1">27:84</data>
+  <data key="d2">27:84</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="وَيْل" id="0">
+  <data key="d1">28:80</data>
+  <data key="d2">28:80</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="مَن" id="0">
+  <data key="d1">30:29</data>
+  <data key="d2">30:29</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="إِيمَٰن" id="0">
+  <data key="d1">30:56</data>
+  <data key="d2">30:56</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="ٱتَّخَذَ" id="0">
+  <data key="d1">31:6</data>
+  <data key="d2">31:6</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="سَاعَة" id="0">
+  <data key="d1">31:34</data>
+  <data key="d2">31:34</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="سَاعَة" id="1">
+  <data key="d1">41:47</data>
+  <data key="d2">41:47</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="سَاعَة" id="2">
+  <data key="d1">43:61</data>
+  <data key="d2">43:61</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="سَاعَة" id="3">
+  <data key="d1">43:85</data>
+  <data key="d2">43:85</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="عِلْم" target="ٱلَّذِى" id="0">
+  <data key="d1">34:6</data>
+  <data key="d2">34:6</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="مَلَأ" id="0">
+  <data key="d1">38:69</data>
+  <data key="d2">38:69</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="بَل" id="0">
+  <data key="d1">39:49</data>
+  <data key="d2">39:49</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="غَفَرَ" id="0">
+  <data key="d1">40:7</data>
+  <data key="d2">40:7</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="دَعَا" id="0">
+  <data key="d1">40:42</data>
+  <data key="d2">40:42</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="حَاقَ" id="0">
+  <data key="d1">40:83</data>
+  <data key="d2">40:83</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="يَوْم" id="0">
+  <data key="d1">41:47</data>
+  <data key="d2">41:47</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="خَتَمَ" id="0">
+  <data key="d1">45:23</data>
+  <data key="d2">45:23</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="مَاذَا" id="0">
+  <data key="d1">47:16</data>
+  <data key="d2">47:16</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="أُدْخِلَ" id="0">
+  <data key="d1">48:25</data>
+  <data key="d2">48:25</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="غَيْب" id="0">
+  <data key="d1">53:35</data>
+  <data key="d2">53:35</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="دَرَجَة" id="0">
+  <data key="d1">58:11</data>
+  <data key="d2">58:11</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="أَيُّهَا" id="0">
+  <data key="d1">65:12</data>
+  <data key="d2">66:1</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عِلْم" target="يَقِين" id="0">
+  <data key="d1">102:5</data>
+  <data key="d2">102:5</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="إِلَّا" target="عِلْم" id="0">
+  <data key="d1">35:11</data>
+  <data key="d2">35:11</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="إِلَّا" target="عِلْم" id="1">
+  <data key="d1">41:47</data>
+  <data key="d2">41:47</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="0">
+  <data key="d1">2:120</data>
+  <data key="d2">2:120</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="1">
+  <data key="d1">2:145</data>
+  <data key="d2">2:145</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="2">
+  <data key="d1">2:255</data>
+  <data key="d2">2:255</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="3">
+  <data key="d1">3:61</data>
+  <data key="d2">3:61</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="4">
+  <data key="d1">4:157</data>
+  <data key="d2">4:157</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="5">
+  <data key="d1">6:148</data>
+  <data key="d2">6:148</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="6">
+  <data key="d1">13:37</data>
+  <data key="d2">13:37</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="7">
+  <data key="d1">17:85</data>
+  <data key="d2">17:85</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="8">
+  <data key="d1">18:5</data>
+  <data key="d2">18:5</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="9">
+  <data key="d1">19:43</data>
+  <data key="d2">19:43</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="10">
+  <data key="d1">38:69</data>
+  <data key="d2">38:69</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="11">
+  <data key="d1">40:83</data>
+  <data key="d2">40:83</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="12">
+  <data key="d1">43:20</data>
+  <data key="d2">43:20</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="13">
+  <data key="d1">45:24</data>
+  <data key="d2">45:24</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="14">
+  <data key="d1">46:4</data>
+  <data key="d2">46:4</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="15">
+  <data key="d1">53:28</data>
+  <data key="d2">53:28</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مِن" target="عِلْم" id="16">
+  <data key="d1">53:30</data>
+  <data key="d2">53:30</data>
+  <data key="d3">17</data>
+</edge>
+<edge source="مَا" target="عِلْم" id="0">
+  <data key="d1">3:66</data>
+  <data key="d2">3:66</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="مَا" target="عِلْم" id="1">
+  <data key="d1">7:187</data>
+  <data key="d2">7:187</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="مَا" target="عِلْم" id="2">
+  <data key="d1">7:187</data>
+  <data key="d2">7:187</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="مَا" target="عِلْم" id="3">
+  <data key="d1">26:112</data>
+  <data key="d2">26:112</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="مَا" target="عِلْم" id="4">
+  <data key="d1">33:63</data>
+  <data key="d2">33:63</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="مَا" target="عِلْم" id="5">
+  <data key="d1">46:23</data>
+  <data key="d2">46:23</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="مَا" target="عِلْم" id="6">
+  <data key="d1">67:26</data>
+  <data key="d2">67:26</data>
+  <data key="d3">7</data>
+</edge>
+<edge source="إِنّ" target="عِلْم" id="0">
+  <data key="d1">43:61</data>
+  <data key="d2">43:61</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="فِى" target="عِلْم" id="0">
+  <data key="d1">2:247</data>
+  <data key="d2">2:247</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="فِى" target="عِلْم" id="1">
+  <data key="d1">3:7</data>
+  <data key="d2">3:7</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="فِى" target="عِلْم" id="2">
+  <data key="d1">4:162</data>
+  <data key="d2">4:162</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="قَالَ" target="عِلْم" id="0">
+  <data key="d1">20:52</data>
+  <data key="d2">20:52</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="أُولِى" target="عِلْم" id="0">
+  <data key="d1">3:18</data>
+  <data key="d2">3:18</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="جَآءَ" target="عِلْم" id="0">
+  <data key="d1">3:19</data>
+  <data key="d2">3:19</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="جَآءَ" target="عِلْم" id="1">
+  <data key="d1">10:93</data>
+  <data key="d2">10:93</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="جَآءَ" target="عِلْم" id="2">
+  <data key="d1">42:14</data>
+  <data key="d2">42:14</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="جَآءَ" target="عِلْم" id="3">
+  <data key="d1">45:17</data>
+  <data key="d2">45:17</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="0">
+  <data key="d1">3:66</data>
+  <data key="d2">3:66</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="1">
+  <data key="d1">11:46</data>
+  <data key="d2">11:46</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="2">
+  <data key="d1">11:47</data>
+  <data key="d2">11:47</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="3">
+  <data key="d1">17:36</data>
+  <data key="d2">17:36</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="4">
+  <data key="d1">22:71</data>
+  <data key="d2">22:71</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="5">
+  <data key="d1">24:15</data>
+  <data key="d2">24:15</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="6">
+  <data key="d1">29:8</data>
+  <data key="d2">29:8</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="7">
+  <data key="d1">31:15</data>
+  <data key="d2">31:15</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="لَّيْسَ" target="عِلْم" id="8">
+  <data key="d1">40:42</data>
+  <data key="d2">40:42</data>
+  <data key="d3">9</data>
+</edge>
+<edge source="أَنزَلَ" target="عِلْم" id="0">
+  <data key="d1">4:166</data>
+  <data key="d2">4:166</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="أَنزَلَ" target="عِلْم" id="1">
+  <data key="d1">11:14</data>
+  <data key="d2">11:14</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="شَىْء" target="عِلْم" id="0">
+  <data key="d1">6:80</data>
+  <data key="d2">6:80</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="شَىْء" target="عِلْم" id="1">
+  <data key="d1">7:89</data>
+  <data key="d2">7:89</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="شَىْء" target="عِلْم" id="2">
+  <data key="d1">20:98</data>
+  <data key="d2">20:98</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="شَىْء" target="عِلْم" id="3">
+  <data key="d1">65:12</data>
+  <data key="d2">65:12</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="0">
+  <data key="d1">6:100</data>
+  <data key="d2">6:100</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="1">
+  <data key="d1">6:108</data>
+  <data key="d2">6:108</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="2">
+  <data key="d1">6:119</data>
+  <data key="d2">6:119</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="3">
+  <data key="d1">6:140</data>
+  <data key="d2">6:140</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="4">
+  <data key="d1">6:144</data>
+  <data key="d2">6:144</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="5">
+  <data key="d1">16:25</data>
+  <data key="d2">16:25</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="6">
+  <data key="d1">22:3</data>
+  <data key="d2">22:3</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="7">
+  <data key="d1">22:8</data>
+  <data key="d2">22:8</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="8">
+  <data key="d1">30:29</data>
+  <data key="d2">30:29</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="9">
+  <data key="d1">31:6</data>
+  <data key="d2">31:6</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="10">
+  <data key="d1">31:20</data>
+  <data key="d2">31:20</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="غَيْر" target="عِلْم" id="11">
+  <data key="d1">48:25</data>
+  <data key="d2">48:25</data>
+  <data key="d3">12</data>
+</edge>
+<edge source="نَبَّأَ" target="عِلْم" id="0">
+  <data key="d1">6:143</data>
+  <data key="d2">6:143</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عَلَىٰ" target="عِلْم" id="0">
+  <data key="d1">7:7</data>
+  <data key="d2">7:7</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عَلَىٰ" target="عِلْم" id="1">
+  <data key="d1">7:52</data>
+  <data key="d2">7:52</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عَلَىٰ" target="عِلْم" id="2">
+  <data key="d1">28:78</data>
+  <data key="d2">28:78</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عَلَىٰ" target="عِلْم" id="3">
+  <data key="d1">39:49</data>
+  <data key="d2">39:49</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عَلَىٰ" target="عِلْم" id="4">
+  <data key="d1">44:32</data>
+  <data key="d2">44:32</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عَلَىٰ" target="عِلْم" id="5">
+  <data key="d1">45:23</data>
+  <data key="d2">45:23</data>
+  <data key="d3">6</data>
+</edge>
+<edge source="عِند" target="عِلْم" id="0">
+  <data key="d1">13:43</data>
+  <data key="d2">13:43</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِند" target="عِلْم" id="1">
+  <data key="d1">27:40</data>
+  <data key="d2">27:40</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِند" target="عِلْم" id="2">
+  <data key="d1">31:34</data>
+  <data key="d2">31:34</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِند" target="عِلْم" id="3">
+  <data key="d1">43:85</data>
+  <data key="d2">43:85</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="عِند" target="عِلْم" id="4">
+  <data key="d1">53:35</data>
+  <data key="d2">53:35</data>
+  <data key="d3">5</data>
+</edge>
+<edge source="أَحَاطَ" target="عِلْم" id="0">
+  <data key="d1">10:39</data>
+  <data key="d2">10:39</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="أَحَاطَ" target="عِلْم" id="1">
+  <data key="d1">20:110</data>
+  <data key="d2">20:110</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="أَحَاطَ" target="عِلْم" id="2">
+  <data key="d1">27:84</data>
+  <data key="d2">27:84</data>
+  <data key="d3">3</data>
+</edge>
+<edge source="حُكْم" target="عِلْم" id="0">
+  <data key="d1">12:22</data>
+  <data key="d2">12:22</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="حُكْم" target="عِلْم" id="1">
+  <data key="d1">21:74</data>
+  <data key="d2">21:74</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="حُكْم" target="عِلْم" id="2">
+  <data key="d1">21:79</data>
+  <data key="d2">21:79</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="حُكْم" target="عِلْم" id="3">
+  <data key="d1">28:14</data>
+  <data key="d2">28:14</data>
+  <data key="d3">4</data>
+</edge>
+<edge source="ذُو" target="عِلْم" id="0">
+  <data key="d1">12:68</data>
+  <data key="d2">12:68</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="ذُو" target="عِلْم" id="1">
+  <data key="d1">12:76</data>
+  <data key="d2">12:76</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="0">
+  <data key="d1">16:27</data>
+  <data key="d2">16:27</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="1">
+  <data key="d1">17:107</data>
+  <data key="d2">17:107</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="2">
+  <data key="d1">22:54</data>
+  <data key="d2">22:54</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="3">
+  <data key="d1">27:42</data>
+  <data key="d2">27:42</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="4">
+  <data key="d1">28:80</data>
+  <data key="d2">28:80</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="5">
+  <data key="d1">29:49</data>
+  <data key="d2">29:49</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="6">
+  <data key="d1">30:56</data>
+  <data key="d2">30:56</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="7">
+  <data key="d1">34:6</data>
+  <data key="d2">34:6</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="8">
+  <data key="d1">47:16</data>
+  <data key="d2">47:16</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="آتَى" target="عِلْم" id="9">
+  <data key="d1">58:11</data>
+  <data key="d2">58:11</data>
+  <data key="d3">10</data>
+</edge>
+<edge source="بَعْد" target="عِلْم" id="0">
+  <data key="d1">16:70</data>
+  <data key="d2">16:70</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="بَعْد" target="عِلْم" id="1">
+  <data key="d1">22:5</data>
+  <data key="d2">22:5</data>
+  <data key="d3">2</data>
+</edge>
+<edge source="لَّدُن" target="عِلْم" id="0">
+  <data key="d1">18:65</data>
+  <data key="d2">18:65</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="زَادَ" target="عِلْم" id="0">
+  <data key="d1">20:114</data>
+  <data key="d2">20:114</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="سُلَيْمَٰن" target="عِلْم" id="0">
+  <data key="d1">27:15</data>
+  <data key="d2">27:15</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="ٱدَّٰرَكَ" target="عِلْم" id="0">
+  <data key="d1">27:66</data>
+  <data key="d2">27:66</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="رَحْمَة" target="عِلْم" id="0">
+  <data key="d1">40:7</data>
+  <data key="d2">40:7</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="رَدَّ" target="عِلْم" id="0">
+  <data key="d1">41:47</data>
+  <data key="d2">41:47</data>
+  <data key="d3">1</data>
+</edge>
+<edge source="عَلِمَ" target="عِلْم" id="0">
+  <data key="d1">102:5</data>
+  <data key="d2">102:5</data>
+  <data key="d3">1</data>
+</edge>
+</graph></graphml>

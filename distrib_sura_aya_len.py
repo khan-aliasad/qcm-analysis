@@ -7,8 +7,8 @@ lengths of suras in traditional and chronologica sequences
 TODO
 Check for errors: double check computations
 
-Heat map of suras and roots as columns to see where roots appear again and again by sura
-Scatter plot of roots in total number of suras they appear in vs average freq which can be 
+Heat map of suras and roots (or lemmas) as columns to see where roots (or lemmas) appear again and again by sura
+Scatter plot of roots (or lemmas) in total number of suras they appear in vs average freq which can be 
 computed as (total appearances / total suras appeared in)
 """
 
@@ -34,7 +34,7 @@ import arabic_reshaper
 #######################
 
 
-def load_data_from_csv(path = '/Users/alikhan/Downloads/qur/'):
+def load_data_from_csv(path = '/Users/ali.khan/Documents/qcm-analysis/'):
 	quran = pd.read_csv(path + 'quran-morphology-final.csv', sep=",", header=0)#, index_col='Index')
 	qtoc = pd.read_csv(path + 'toc.csv')
 	qtoc['Name Arabic'] = qtoc['Name Arabic'].apply(lambda x: bidialg.get_display(arabic_reshaper.reshape(x)))
@@ -49,41 +49,43 @@ def load_data_from_csv(path = '/Users/alikhan/Downloads/qur/'):
 
 if __name__ == '__main__':
 
-	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
+	path = '/Users/ali.khan/Documents/src/qcm-analysis/'
 
-	quran, qtoc = load_data_from_csv(path = path + 'data/')
+	analysand = 'Lemma_ar'#'Root_ar'
+
+	quran, qtoc = load_data_from_csv(path = path + 'resources/')
 	quran = quran.merge(qtoc.drop('Place',1), left_on='sura', right_on='No.')
-	quran['number of roots'] = quran.Root_ar.astype(bool).astype(int)
+	quran['number of {}s'.format(analysand)] = quran[analysand].astype(bool).astype(int)
 	
-	# qrn = quran.groupby(['Chronology','Root_ar']).agg(sum).reset_index()
-	qrn = quran.groupby(['sura','Root_ar']).agg(sum).reset_index()
-	qrn = qrn[qrn.Root_ar != 0]
-	# qpiv = qrn.pivot(index='Chronology', columns='Root_ar', values='number of roots')
-	qpiv = qrn.pivot(index='sura', columns='Root_ar', values='number of roots')
-	qpiv.to_csv(path + 'data/heatmap_features.csv')
+	# qrn = quran.groupby(['Chronology',analysand]).agg(sum).reset_index()
+	qrn = quran.groupby(['sura',analysand]).agg(sum).reset_index()
+	qrn = qrn[qrn[analysand] != 0]
+	# qpiv = qrn.pivot(index='Chronology', columns=analysand, values='number of {}s'.format(analysand))
+	qpiv = qrn.pivot(index='sura', columns=analysand, values='number of {}s'.format(analysand))
+	qpiv.to_csv(path + 'data/heatmap_{}_features.csv'.format(analysand))
 
 	if True:
 		sns.heatmap(qpiv.sort_index(), xticklabels=30, yticklabels=4, cmap='Blues',center=50)#, linewidth=0.5)# cmap='YlGnBu')
 		plt.show(); plt.close()
 
-	root_counts = qpiv.sum()
-	root_sura_counts = qpiv.fillna(0).astype(bool).sum()
-	root_sura_freq = root_counts/root_sura_counts
-	datf = pd.DataFrame({'root_counts':root_counts, 'root_sura_counts':root_sura_counts, 'root_sura_freq':root_sura_freq})
+	analysand_counts = qpiv.sum()
+	analysand_sura_counts = qpiv.fillna(0).astype(bool).sum()
+	analysand_sura_freq = analysand_counts/analysand_sura_counts
+	datf = pd.DataFrame({'analysand_counts':analysand_counts, 'analysand_sura_counts':analysand_sura_counts, 'analysand_sura_freq':analysand_sura_freq})
 	print(datf)
 	fig, ax = plt.subplots()
-	plt.scatter(datf['root_sura_counts'], datf['root_sura_freq'], s=datf['root_counts'], alpha=0.2)# hue='root_counts'
-	for n, xs, ys in zip(datf.index, datf['root_sura_counts'], datf['root_sura_freq']):
+	plt.scatter(datf['analysand_sura_counts'], datf['analysand_sura_freq'], s=datf['analysand_counts'], alpha=0.2)# hue='analysand_counts'
+	for n, xs, ys in zip(datf.index, datf['analysand_sura_counts'], datf['analysand_sura_freq']):
 		ax.text(xs, ys, bidialg.get_display(arabic_reshaper.reshape(n)), alpha=0.6, size=10) ##bidialg.get_display(arabic_reshaper.reshape(n))
-	plt.xlabel('Total number of Suras in which root appears')
-	plt.ylabel('Total root appearances divided by Total number of Suras in which root appears')
+	plt.xlabel('Total number of Suras in which analysand appears')
+	plt.ylabel('Total analysand appearances divided by Total number of Suras in which analysand appears')
 	plt.show(); plt.close()
 
 	if True:
-		ax = sns.kdeplot(datf['root_sura_counts'], datf['root_sura_freq'], shade=True)
+		ax = sns.kdeplot(datf['analysand_sura_counts'], datf['analysand_sura_freq'], shade=True)
 		plt.show(); plt.close()
 
-	if True:
+	if False:
 		# print(quran.sura.max())
 		sequence = 'chronological' #'chronological'
 		if sequence is 'traditional':
@@ -98,20 +100,20 @@ if __name__ == '__main__':
 		else:
 			groups = groups.merge(qtoc, left_on='sura', right_on='No.')
 		print(groups)
-		ax = sns.boxplot(x=col, y='number of roots', hue='Place', 
+		ax = sns.boxplot(x=col, y='number of {}s'.format(analysand), hue='Place', 
 					width=1, fliersize=2, linewidth=0.8, notch=False,
 					data=groups)
 		ax.set_xticklabels(ax.get_xticklabels(),rotation=90)
-		plt.title('Distribution of density of aya (in number of roots) by sura')
+		plt.title('Distribution of density of aya (in number of analysands) by sura')
 		plt.show()
 		plt.close()
 
 		########### ROOTS VIOLIN
 		groups = quran.groupby([col]).agg(sum).reset_index()
 		print(groups)
-		ax = sns.violinplot(y=groups['number of roots'], inner='stick', color='red')
+		ax = sns.violinplot(y=groups['number of {}s'.format(analysand)], inner='stick', color='red')
 		# ax.set_xticklabels(ax.get_xticklabels(),rotation=90)
-		plt.title('Distribution of density of sura (in number of roots)')
+		plt.title('Distribution of density of sura (in number of analysands)')
 		plt.show()
 		plt.close()
 

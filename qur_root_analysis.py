@@ -21,12 +21,12 @@ __email__ = "khan.aliasad@gmail.com"
 __status__ = "dev"
 
 
-from qur_func import *
+from qur_func import * 
 
 
 if __name__ == '__main__':
 	#########################
-	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
+	path = '/Users/ali.khan/Documents/src/qcm-analysis/'
 	
 	chronological = False
 
@@ -36,9 +36,9 @@ if __name__ == '__main__':
 		sz = 80
 	
 	sz = 15
-	
-	analysand = 'Root_ar'#'Lemma_ar'
-	node_of_interest = u'نصح'#'دين'#'كون'#'فقه'#'دين'#'فقه'#'شرع'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
+
+	analysand = 'Lemma_ar'#'Root_ar'
+	node_of_interest = ''#u'نصح'#'عِلْم'#'فقه'#'نصح'#'دين'#'كون'#'فقه'#'دين'#'شرع'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
 	method = 'breadth'
 
 	draw_full_graph = False
@@ -71,13 +71,13 @@ if __name__ == '__main__':
 
 	root_counts = quran[analysand].value_counts().drop(0).to_dict()
 	# del root_counts[0]
-	print(root_counts)
-	print(node_of_interest, root_counts[node_of_interest])
+	#print(root_counts)
+	#print(node_of_interest, root_counts[node_of_interest])
 	# sns.distplot(quran[quran[analysand]!=0][analysand].value_counts(), bins=100)
 	# plt.show()
 
 	G = create_graph(edges_df, root_counts, node_of_interest)
-
+	#print(edges_df)
 	# FILTER THOSE NODES WHERE FREQ LESS THAN 40 AND THEN DRAW
 	filter = False
 	if filter:
@@ -97,26 +97,34 @@ if __name__ == '__main__':
 			num = 'Chronology'
 		else:
 			num = 'No.'
-		title = str(*qtoc[qtoc[num] == sur].values.tolist())[1:-1] + '\nRoots: ' + str(len(G.nodes())) + \
-				', Cooccurrences: '+ str(len(G.edges())) + ', Unique cooccurrences: ' + str(lenuniq)
+		title = str(*qtoc[qtoc[num] == sur].values.tolist())[1:-1] + \
+									'\n{}s: '.format([analysand.split('_')[0] if '_' in analysand else analysand][0]) + \
+									str(len(G.nodes())) + \
+									', Cooccurrences: '+ str(len(G.edges())) + ', Unique cooccurrences: ' + str(lenuniq)
 		# title = ''
 
 	else:
-		title = 'The Holy Quran [Roots: ' + str(len(G.nodes())) +', Cooccurrences: '+ str(len(G.edges())) + \
+		title = 'The Holy Quran [{}s: '.format([analysand.split('_')[0] if '_' in analysand else analysand][0]) + \
+					str(len(G[0].nodes())) + \
+					', Cooccurrences: ' + \
+					str(len(G[0].edges())) + \
 				 ', Unique cooccurrences: ' + str(lenuniq) + ']'
 	
 	if save_graphml:
-		nx.write_graphml(G, path + 'graphml/test.graphml')
+		nx.write_graphml(G[0], path + 'graphml/test.graphml')
 
 	if draw_full_graph:
-		draw_graph(G, node_freq=root_counts, nodesize_multiplier=sz, weight='count', title=title)
+		draw_graph(G[0], node_freq=root_counts, 
+						nodesize_multiplier=sz, 
+						weight='count', 
+						title=title)
 
 	##################################################################
 	############ Subgraph for node of interest (root) ################
 	##################################################################
 
 	# I = create_subgraph(G, method=method, node_of_interest=node_of_interest)
-	I, f = create_subgraph_from_edges_dataframe(G, edges_df, node_of_interest=node_of_interest)
+	#I, f = create_subgraph_from_edges_dataframe(G[0], edges_df, node_of_interest=node_of_interest)
 	
 	if save_subgraphml:
 		# nx.write_graphml(I, path + 'graphml/' + node_of_interest + '.graphml')
@@ -126,34 +134,42 @@ if __name__ == '__main__':
 		f[0] = bidialg.get_display(arabic_reshaper.reshape(f[0]))
 		from itertools import zip_longest
 		feat = '\n'.join(':  '.join(x) for x in zip_longest(feat_header, [str(i) for i in f], fillvalue=''))
-		draw_subgraph(I, feat, node_of_interest=node_of_interest, nodesize_multiplier = sz, title= title)
+		draw_subgraph(I, feat, node_of_interest=node_of_interest, 
+						nodesize_multiplier = sz, 
+						title= title, 
+						root_or_lemma = [analysand.split('_')[0] if '_' in analysand else analysand][0])
 
 	if loop_to_subgraphs:
 		features = []
-		for noi in G.nodes().keys():
+		#print(G[0],G[1])
+		for noi in G[0].nodes().keys():
 			print(noi)
-			I, f = create_subgraph_from_edges_dataframe(G, edges_df, node_of_interest=noi)
+			I, f = create_subgraph_from_edges_dataframe(G[0], edges_df, node_of_interest=noi)
 			print(len(I.in_degree()))
 			print(len(I.out_degree()))
 			features.append(f)
-			f[0] = bidialg.get_display(arabic_reshaper.reshape(f[0]))
+			#f[0] = bidialg.get_display(arabic_reshaper.reshape(f[0]))
 			from itertools import zip_longest
 			feat = '\n'.join(':  '.join(x) for x in zip_longest(feat_header, [str(i) for i in f], fillvalue=''))
-			draw_subgraph(I, feat, node_of_interest=noi, nodesize_multiplier = sz, title= title)
+			draw_subgraph(I, feat, node_of_interest=noi, 
+						nodesize_multiplier = sz, 
+						title= title,
+						root_or_lemma = [analysand.split('_')[0] if '_' in analysand else analysand][0])
+			nx.write_graphml(I, path + 'graphml/{}.graphml'.format(arabic_to_buc(noi)))
 
 
 		features = pd.DataFrame(features, columns=feat_header)
 		# if (features.graph_size - features.edges).sum()==0:
 		# 	features = features.drop('edges',1)
 		print(features.info())
-		features.to_csv(path + 'data/root_subgraph_features.csv')
+		features.to_csv(path + 'data/{}_subgraph_features.csv'.format(analysand))
 
 
 	#############################################
 
 
 	# check how many times a given degree occurs:
-	degrees = [a + ' ' + str(G.degree[a]) for a in G.nodes]
+	degrees = [a + ' ' + str(G[0].degree[a]) for a in G[0].nodes]
 	# generate unique x-coordinates. divide by 2 for zero-centering: 
 	degrees = {degree: [a for a in degrees.count(degree)/2. - np.arange(degrees.count(degree))] for degree in set(degrees)}
 	# print(degrees)

@@ -50,7 +50,7 @@ if __name__ == '__main__':
 	print(qur_func.buck_to_arabic('EalaY'))
 	# print(qur_func.arabic_to_buc('اﻟﺤﻤﺪ ﻟﻠﻪ'))
 
-	quran = load_corpus(path='/Users/alikhan/Downloads/qur/qcm-analysis/resources/', 
+	quran = load_corpus(path='/Users/ali.khan/Documents/src/qcm-analysis/resources/', 
 		filename='quranic-corpus-morphology-0.4.txt')
 
 	k = set(quran[quran.Place == 'Meccan'].Root.unique().tolist())

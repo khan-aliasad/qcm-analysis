@@ -457,7 +457,7 @@ def create_subgraph(G, method='breadth', node_of_interest = ''):
     return I
 
 
-def draw_subgraph(I, feat, node_of_interest = '', node_freq=None, nodesize_multiplier=5, title= ''):
+def draw_subgraph(I, feat, node_of_interest = '', node_freq=None, nodesize_multiplier=5, title= '', root_or_lemma='Root'):
     # df = pd.DataFrame(index=I.nodes(), columns=I.nodes())
     # for row, datum in nx.shortest_path_length(I):
     #     for col, dist in datum.items():
@@ -516,9 +516,9 @@ def draw_subgraph(I, feat, node_of_interest = '', node_freq=None, nodesize_multi
                 # xycoords='axes fraction', textcoords='offset points',
                 bbox=dict(fill=False, facecolor='k',edgecolor='white', linewidth=0.5))
     
-    plt.title('Root: ' + bidialg.get_display(arabic_reshaper.reshape(node_of_interest))+ 
+    plt.title(root_or_lemma + ': ' + bidialg.get_display(arabic_reshaper.reshape(node_of_interest))+ 
                 ' [Freq: ' + str(I.nodes[node_of_interest]['freq']) +
-                ', Roots: ' + str(len(I.nodes())) +
+                ', ' + root_or_lemma + 's: ' + str(len(I.nodes())) +
                 ', Cooccurrences: '+ str(len(I.edges())) + ']\nIn ' +
                 title)
     # ax.set_axis_off()

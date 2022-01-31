@@ -45,7 +45,7 @@ def load_data_from_csv(path = '/Users/alikhan/Downloads/qur/'):
 
 if __name__ == '__main__':
 
-	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
+	path = '/Users/ali.khan/Documents/src/qcm-analysis/'
 
 	if False:
 		import seaborn as sns 
@@ -105,7 +105,7 @@ if __name__ == '__main__':
 	if sur is not None:
 		sz=40
 	analysand = 'Root_ar'#'Lemma_ar'
-	node_of_interest = u'كون'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
+	node_of_interest = u'حسن'#u'حقق'#u'ذكر'#'*kr'#'kwn'#'qwl' #u'ذكر' u'ارض'. 'حرم' 'فعل' 'حرم' 'ﻏﻀﺐ'
 	method = 'breadth'
 	
 	quran, qtoc = load_data_from_csv(path = path + 'data/')

@@ -35,7 +35,7 @@ plt.rcParams['axes.facecolor'] = 'white'
 
 if __name__ == '__main__':
 
-	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
+	path = '/Users/ali.khan/Documents/qcm-analysis/'
 
 	k=3
 	rs = randint(0, 200)

@@ -36,13 +36,13 @@ from qur_root_analysis import *
 
 if __name__ == '__main__':
 	#########################
-	path = '/Users/alikhan/Downloads/qur/qcm-analysis/'
+	path = '/Users/ali.khan/Documents/src/qcm-analysis/'
 	
-	analysand = 'Root_ar'#'Lemma_ar'
-	noi = u'اله'
+	analysand = 'Lemma_ar'#Root_ar
+	noi = u'عِلْم'#'روح'
 	sz = 40
 	
-	draw_full_graph = False
+	draw_full_graph = True
 	save_graphml = False
 
 	#########################
@@ -54,14 +54,15 @@ if __name__ == '__main__':
 	feat_header.extend(['sura', 'sura_name'])
 	print(feat_header)
 
-	for sur in qtoc['No.'].values:
+	for sur in [19]:#qtoc['No.'].values:
 		print(sur)
 		qu = quran[quran.sura == sur].reset_index()
 		bigrams, bigrams_pos = create_ngrams(qu, col=analysand, n=2, separate=True, sep='786')	
 		edges_df, lenuniq = create_graph_edges_dataframe(bigrams, bigrams_pos, sep='786')
 		root_counts = qu[analysand].value_counts().drop(0).to_dict()
 		G, f = create_graph(edges_df, root_counts, node_of_interest=noi)
-		title = str(*qtoc[qtoc['No.'] == sur].values.tolist())[1:-1] + '\nRoots: ' + str(len(G.nodes())) + \
+		title = str(*qtoc[qtoc['No.'] == sur].values.tolist())[1:-1] + \
+				'\n{}s: '.format(analysand) + str(len(G.nodes())) + \
 				', Cooccurrences: '+ str(len(G.edges())) + ', Unique cooccurrences: ' + str(lenuniq)
 
 		sura_name = qtoc[qtoc['No.'] == sur]['Name'].values[0]
@@ -83,7 +84,7 @@ if __name__ == '__main__':
 
 	features = pd.DataFrame(features, columns=feat_header)
 	print(features.info())
-	features.to_csv(path + 'data/sura_graph_features.csv')
+	features.to_csv(path + 'data/'+arabic_to_buc(noi)+'_sura_graph_features.csv')
 
 	feat_header.remove('sura')
 	feat_header.remove('sura_name')
