@@ -42,12 +42,12 @@ if __name__ == '__main__':
 	method = 'breadth'
 
 	draw_full_graph = False
-	save_graphml = False
+	save_graphml = True
 
 	save_subgraphml = False 
 	draw_root_subgraph = False 
 	
-	loop_to_subgraphs = True
+	loop_to_subgraphs = False
 	#########################
 	
 	quran, qtoc = load_corpus_dataframe_from_csv(path = path)
@@ -111,7 +111,7 @@ if __name__ == '__main__':
 				 ', Unique cooccurrences: ' + str(lenuniq) + ']'
 	
 	if save_graphml:
-		nx.write_graphml(G[0], path + 'graphml/test.graphml')
+		nx.write_graphml(G[0], path + 'graphml/qur_{}.graphml'.format(analysand))
 
 	if draw_full_graph:
 		draw_graph(G[0], node_freq=root_counts, 

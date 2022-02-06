@@ -70,3 +70,14 @@ TODO
 + Use GMM EM to cluster
 + Heatmap take sums of rows and columns and sort by sums 
 + Verse clustering
+
++ root freq and degree
++ lemma freq and degree
++ stemming lemmas and removing arabic stop words
++ training gensim on corpora (shamela and others)
+
++1. the relational meaning of Arabic root words, looking at immediate concordance (co-occurrence of root words in pairs) and frequencies of the roots (individual as well as paired frequencies).  For example, checking the frequency of most appearing root A-L-H (individual frequency 2,851 and paired occurrences 5000+ times with 529 other roots)
+2. extensions of this to synonymy and antonymy focusing on the rare occurrences (low frequencies) in light of focused study questions, e.g., contrast Haqq and Batil, Iman and Kufr, Munafiqat ...
+3. sentence level morphology to find similar ayaat in form, in all of the Quran Corpus
+4. semantics of ayaat - training machine learning models on Arabic corpora (e.g., hadith literature, pre-islamic poetry, islamic literature over the centuries, modern standard Arabic in news and magazines etc.) to aid questions such as studying bedouin and mercantile Arabic in the pre-Quranic period to contrast how meaning of certain words evolved ...
+

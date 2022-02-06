@@ -157,7 +157,7 @@ def load_qtoc(path = '/Users/alikhan/Downloads/qur/'):
 
 def load_corpus_dataframe_from_csv(path = '/Users/alikhan/Downloads/qur/'):
     quran = pd.read_csv(path + 'data/quran-morphology-final.csv', sep=",", header=0)#, index_col='Index')
-    qtoc = pd.read_csv(path + 'data/toc.csv')
+    qtoc = pd.read_csv(path + 'resources/toc.csv')
     qtoc['Name Arabic'] = qtoc['Name Arabic'].apply(lambda x: bidialg.get_display(arabic_reshaper.reshape(x)))
     quran = quran.fillna(0)
     print(quran.head())
